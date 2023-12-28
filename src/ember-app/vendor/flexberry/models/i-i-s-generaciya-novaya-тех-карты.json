@@ -1,0 +1,141 @@
+﻿{
+  "name": "IISGeneraciya_novayaТехКарты",
+  "modelName": "i-i-s-generaciya-novaya-тех-карты",
+  "className": "ТехКарты",
+  "nameSpace": "IIS.Generaciya_novaya",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "дата",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номерКарты",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "чертежи",
+      "relatedTo": "i-i-s-generaciya-novaya-чертежи",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "тЧТехКарты",
+      "relatedTo": "i-i-s-generaciya-novaya-т-ч-тех-карты",
+      "inverse": "техКарты"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ТехКартыE",
+      "modelName": "i-i-s-generaciya-novaya-тех-карты",
+      "attrs": [
+        {
+          "name": "номерКарты",
+          "caption": "Номер карты",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "дата",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "НаименЧертеж",
+          "lookupValueField": "наименЧертеж",
+          "relationName": "Чертежи",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименЧертеж",
+              "caption": "Наименование чертежа",
+              "hidden": true,
+              "index": 3
+            }
+          ],
+          "index": 2,
+          "type": "standard",
+          "caption": "Чертежи",
+          "name": "чертежи",
+          "relatedTo": "i-i-s-generaciya-novaya-чертежи",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ТЧТехКартыE",
+          "caption": "Этапы",
+          "name": "тЧТехКарты",
+          "relatedTo": "i-i-s-generaciya-novaya-т-ч-тех-карты",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ТехКартыL",
+      "modelName": "i-i-s-generaciya-novaya-тех-карты",
+      "attrs": [
+        {
+          "name": "номерКарты",
+          "caption": "Номер карты",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "дата",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Чертежи",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименЧертеж",
+              "caption": "Наименование чертеж",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование чертеж",
+          "name": "чертежи",
+          "relatedTo": "i-i-s-generaciya-novaya-чертежи",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.Generaciya_novaya",
+  "className": "Состояние",
+  "enumObjects": {
+    "Работает": "Работает",
+    "Ремонт": "В ремонте"
+  }
+}

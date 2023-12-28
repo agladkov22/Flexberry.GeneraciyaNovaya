@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-generaciya-novaya-тех-карты-e",
+  "editForm": "i-i-s-generaciya-novaya-тех-карты-e",
+  "external": false,
+  "caption": "Тех карты",
+  "name": "IISGeneraciya_novayaТехКартыL",
+  "className": "ТехКартыL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-тех-карты",
+      "modelProjection": "ТехКартыL"
+    }
+  ]
+}

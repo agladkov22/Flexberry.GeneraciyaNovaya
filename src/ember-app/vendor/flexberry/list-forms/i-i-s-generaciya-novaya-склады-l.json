@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-generaciya-novaya-склады-e",
+  "editForm": "i-i-s-generaciya-novaya-склады-e",
+  "external": false,
+  "caption": "Склады",
+  "name": "IISGeneraciya_novayaСкладыL",
+  "className": "СкладыL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-склады",
+      "modelProjection": "СкладыL"
+    }
+  ]
+}

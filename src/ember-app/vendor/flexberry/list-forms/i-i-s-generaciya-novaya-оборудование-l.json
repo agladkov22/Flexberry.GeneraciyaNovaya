@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-generaciya-novaya-оборудование-e",
+  "editForm": "i-i-s-generaciya-novaya-оборудование-e",
+  "external": false,
+  "caption": "Оборудование",
+  "name": "IISGeneraciya_novayaОборудованиеL",
+  "className": "ОборудованиеL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-оборудование",
+      "modelProjection": "ОборудованиеL"
+    }
+  ]
+}

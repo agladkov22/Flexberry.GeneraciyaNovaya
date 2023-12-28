@@ -1,0 +1,93 @@
+﻿{
+  "name": "IISGeneraciya_novayaТчЧертежи",
+  "modelName": "i-i-s-generaciya-novaya-тч-чертежи",
+  "className": "ТчЧертежи",
+  "nameSpace": "IIS.Generaciya_novaya",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "версия",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаИзм",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "имяФайла",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "расширение",
+      "type": "i-i-s-generaciya-novaya-расширение",
+      "flexberryType": "Расширение",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "чертежи",
+      "relatedTo": "i-i-s-generaciya-novaya-чертежи",
+      "inverse": "тчЧертежи"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТчЧертежиE",
+      "modelName": "i-i-s-generaciya-novaya-тч-чертежи",
+      "attrs": [
+        {
+          "name": "версия",
+          "caption": "Версия файла",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "имяФайла",
+          "caption": "Имя файла",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "расширение",
+          "caption": "Расширение",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "датаИзм",
+          "caption": "Дата изменения",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

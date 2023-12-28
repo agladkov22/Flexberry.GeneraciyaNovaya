@@ -1,0 +1,64 @@
+﻿{
+  "applicationCaption": "Generaciya_novaya",
+  "applicationTitle": "Generaciya_novaya",
+  "items": [
+    {
+      "link": null,
+      "menuName": "generaciya-novaya",
+      "caption": "Generaciya_novaya",
+      "title": "Generaciya_novaya",
+      "children": [
+        {
+          "link": "i-i-s-generaciya-novaya-заявки-l",
+          "menuName": null,
+          "caption": "Заявки",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-generaciya-novaya-оборудование-l",
+          "menuName": null,
+          "caption": "Оборудование",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-generaciya-novaya-тех-карты-l",
+          "menuName": null,
+          "caption": "Тех карты",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-generaciya-novaya-клиенты-l",
+          "menuName": null,
+          "caption": "Клиенты",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-generaciya-novaya-материалы-l",
+          "menuName": null,
+          "caption": "Материалы",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-generaciya-novaya-склады-l",
+          "menuName": null,
+          "caption": "Склады",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-generaciya-novaya-чертежи-l",
+          "menuName": null,
+          "caption": "Чертежи",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

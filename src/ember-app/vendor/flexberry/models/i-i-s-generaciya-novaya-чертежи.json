@@ -1,0 +1,141 @@
+﻿{
+  "name": "IISGeneraciya_novayaЧертежи",
+  "modelName": "i-i-s-generaciya-novaya-чертежи",
+  "className": "Чертежи",
+  "nameSpace": "IIS.Generaciya_novaya",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаСоздания",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "наименЧертеж",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "заявки",
+      "relatedTo": "i-i-s-generaciya-novaya-заявки",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "тчЧертежи",
+      "relatedTo": "i-i-s-generaciya-novaya-тч-чертежи",
+      "inverse": "чертежи"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ЧертежиE",
+      "modelName": "i-i-s-generaciya-novaya-чертежи",
+      "attrs": [
+        {
+          "name": "наименЧертеж",
+          "caption": "Наименование чертежа",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаСоздания",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "НомерЗаявки",
+          "lookupValueField": "номерЗаявки",
+          "relationName": "Заявки",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "номерЗаявки",
+              "caption": "Номер заявки",
+              "hidden": true,
+              "index": 3
+            }
+          ],
+          "index": 2,
+          "type": "standard",
+          "caption": "Заявки",
+          "name": "заявки",
+          "relatedTo": "i-i-s-generaciya-novaya-заявки",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ТчЧертежиE",
+          "caption": "Версии Чертежа",
+          "name": "тчЧертежи",
+          "relatedTo": "i-i-s-generaciya-novaya-тч-чертежи",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ЧертежиL",
+      "modelName": "i-i-s-generaciya-novaya-чертежи",
+      "attrs": [
+        {
+          "name": "наименЧертеж",
+          "caption": "Наименование чертежа",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаСоздания",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Заявки",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "номерЗаявки",
+              "caption": "Номер заявки",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номер заявки",
+          "name": "заявки",
+          "relatedTo": "i-i-s-generaciya-novaya-заявки",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

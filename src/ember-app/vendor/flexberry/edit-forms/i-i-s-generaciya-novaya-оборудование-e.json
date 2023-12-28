@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Оборудование",
+  "name": "IISGeneraciya_novayaОборудованиеE",
+  "className": "ОборудованиеE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-оборудование",
+      "modelProjection": "ОборудованиеE"
+    }
+  ]
+}

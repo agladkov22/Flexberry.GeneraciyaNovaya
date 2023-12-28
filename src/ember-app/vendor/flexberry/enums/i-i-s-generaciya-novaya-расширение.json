@@ -1,0 +1,11 @@
+﻿{
+  "nameSpace": "IIS.Generaciya_novaya",
+  "className": "Расширение",
+  "enumObjects": {
+    "pdf": "pdf",
+    "step": "step",
+    "obj": "obj",
+    "dxf": "dxf",
+    "xml": "xml"
+  }
+}

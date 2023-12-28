@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-generaciya-novaya-чертежи-e",
+  "editForm": "i-i-s-generaciya-novaya-чертежи-e",
+  "external": false,
+  "caption": "Чертежи",
+  "name": "IISGeneraciya_novayaЧертежиL",
+  "className": "ЧертежиL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-чертежи",
+      "modelProjection": "ЧертежиL"
+    }
+  ]
+}

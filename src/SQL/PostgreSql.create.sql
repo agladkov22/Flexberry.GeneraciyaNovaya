@@ -1,0 +1,226 @@
+﻿
+
+
+
+
+CREATE TABLE Заявки (
+ primaryKey UUID NOT NULL,
+ НомерЗаявки INT NULL,
+ ДатаЗаявки TIMESTAMP(3) NULL,
+ НаименДетали VARCHAR(255) NULL,
+ Количество INT NULL,
+ Цена REAL NULL,
+ Клиенты UUID NOT NULL,
+ Материалы UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE ТЧТехКарты (
+ primaryKey UUID NOT NULL,
+ СоставРабот VARCHAR(255) NULL,
+ ПунктРаботы INT NULL,
+ Оборудование UUID NOT NULL,
+ Материалы UUID NOT NULL,
+ ТехКарты UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE ТчЧертежи (
+ primaryKey UUID NOT NULL,
+ ИмяФайла VARCHAR(255) NULL,
+ Расширение VARCHAR(4) NULL,
+ ДатаИзм TIMESTAMP(3) NULL,
+ Версия REAL NULL,
+ Чертежи UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE Оборудование (
+ primaryKey UUID NOT NULL,
+ ID INT NULL,
+ Наименование VARCHAR(255) NULL,
+ Состояние VARCHAR(9) NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE ТехКарты (
+ primaryKey UUID NOT NULL,
+ НомерКарты INT NULL,
+ Дата TIMESTAMP(3) NULL,
+ Чертежи UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE Клиенты (
+ primaryKey UUID NOT NULL,
+ ID INT NULL,
+ Наименование VARCHAR(255) NULL,
+ Ответственный VARCHAR(255) NULL,
+ Телефон INT NULL,
+ Почта VARCHAR(255) NULL,
+ Банк VARCHAR(255) NULL,
+ РасСчет INT NULL,
+ ИНН INT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE Материалы (
+ primaryKey UUID NOT NULL,
+ ID INT NULL,
+ Наименование VARCHAR(255) NULL,
+ Склады UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE Склады (
+ primaryKey UUID NOT NULL,
+ ID INT NULL,
+ Наименование VARCHAR(255) NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE Чертежи (
+ primaryKey UUID NOT NULL,
+ НаименЧертеж VARCHAR(255) NULL,
+ ДатаСоздания TIMESTAMP(3) NULL,
+ Заявки UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE STORMNETLOCKDATA (
+ LockKey VARCHAR(300) NOT NULL,
+ UserName VARCHAR(300) NOT NULL,
+ LockDate TIMESTAMP(3) NULL,
+ PRIMARY KEY (LockKey));
+
+
+CREATE TABLE STORMSETTINGS (
+ primaryKey UUID NOT NULL,
+ Module VARCHAR(1000) NULL,
+ Name VARCHAR(255) NULL,
+ Value TEXT NULL,
+ "User" VARCHAR(255) NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE STORMAdvLimit (
+ primaryKey UUID NOT NULL,
+ "User" VARCHAR(255) NULL,
+ Published BOOLEAN NULL,
+ Module VARCHAR(255) NULL,
+ Name VARCHAR(255) NULL,
+ Value TEXT NULL,
+ HotKeyData INT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE STORMFILTERSETTING (
+ primaryKey UUID NOT NULL,
+ Name VARCHAR(255) NOT NULL,
+ DataObjectView VARCHAR(255) NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE STORMWEBSEARCH (
+ primaryKey UUID NOT NULL,
+ Name VARCHAR(255) NOT NULL,
+ "Order" INT NOT NULL,
+ PresentView VARCHAR(255) NOT NULL,
+ DetailedView VARCHAR(255) NOT NULL,
+ FilterSetting_m0 UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE STORMFILTERDETAIL (
+ primaryKey UUID NOT NULL,
+ Caption VARCHAR(255) NOT NULL,
+ DataObjectView VARCHAR(255) NOT NULL,
+ ConnectMasterProp VARCHAR(255) NOT NULL,
+ OwnerConnectProp VARCHAR(255) NULL,
+ FilterSetting_m0 UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE STORMFILTERLOOKUP (
+ primaryKey UUID NOT NULL,
+ DataObjectType VARCHAR(255) NOT NULL,
+ Container VARCHAR(255) NULL,
+ ContainerTag VARCHAR(255) NULL,
+ FieldsToView VARCHAR(255) NULL,
+ FilterSetting_m0 UUID NOT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE UserSetting (
+ primaryKey UUID NOT NULL,
+ AppName VARCHAR(256) NULL,
+ UserName VARCHAR(512) NULL,
+ UserGuid UUID NULL,
+ ModuleName VARCHAR(1024) NULL,
+ ModuleGuid UUID NULL,
+ SettName VARCHAR(256) NULL,
+ SettGuid UUID NULL,
+ SettLastAccessTime TIMESTAMP(3) NULL,
+ StrVal VARCHAR(256) NULL,
+ TxtVal TEXT NULL,
+ IntVal INT NULL,
+ BoolVal BOOLEAN NULL,
+ GuidVal UUID NULL,
+ DecimalVal DECIMAL(20,10) NULL,
+ DateTimeVal TIMESTAMP(3) NULL,
+ PRIMARY KEY (primaryKey));
+
+
+CREATE TABLE ApplicationLog (
+ primaryKey UUID NOT NULL,
+ Category VARCHAR(64) NULL,
+ EventId INT NULL,
+ Priority INT NULL,
+ Severity VARCHAR(32) NULL,
+ Title VARCHAR(256) NULL,
+ Timestamp TIMESTAMP(3) NULL,
+ MachineName VARCHAR(32) NULL,
+ AppDomainName VARCHAR(512) NULL,
+ ProcessId VARCHAR(256) NULL,
+ ProcessName VARCHAR(512) NULL,
+ ThreadName VARCHAR(512) NULL,
+ Win32ThreadId VARCHAR(128) NULL,
+ Message VARCHAR(2500) NULL,
+ FormattedMessage TEXT NULL,
+ PRIMARY KEY (primaryKey));
+
+
+
+ ALTER TABLE Заявки ADD CONSTRAINT FK9008ce128ad91543ca90db06e83b0c7ebd40870f FOREIGN KEY (Клиенты) REFERENCES Клиенты; 
+CREATE INDEX Index9008ce128ad91543ca90db06e83b0c7ebd40870f on Заявки (Клиенты); 
+
+ ALTER TABLE Заявки ADD CONSTRAINT FK39f46606ebc8e4c9c24649bb325057e49f9cac12 FOREIGN KEY (Материалы) REFERENCES Материалы; 
+CREATE INDEX Index39f46606ebc8e4c9c24649bb325057e49f9cac12 on Заявки (Материалы); 
+
+ ALTER TABLE ТЧТехКарты ADD CONSTRAINT FK99e8b85137e7bba18b747d5c3938c172dfb96c4f FOREIGN KEY (Оборудование) REFERENCES Оборудование; 
+CREATE INDEX Index99e8b85137e7bba18b747d5c3938c172dfb96c4f on ТЧТехКарты (Оборудование); 
+
+ ALTER TABLE ТЧТехКарты ADD CONSTRAINT FK96fa0c50d6c7da8bb5a544e814ed4412a8d6d8d0 FOREIGN KEY (Материалы) REFERENCES Материалы; 
+CREATE INDEX Index96fa0c50d6c7da8bb5a544e814ed4412a8d6d8d0 on ТЧТехКарты (Материалы); 
+
+ ALTER TABLE ТЧТехКарты ADD CONSTRAINT FK7db2324c1b91f5af91cc7ac17d869c8ffccd5df6 FOREIGN KEY (ТехКарты) REFERENCES ТехКарты; 
+CREATE INDEX Index7db2324c1b91f5af91cc7ac17d869c8ffccd5df6 on ТЧТехКарты (ТехКарты); 
+
+ ALTER TABLE ТчЧертежи ADD CONSTRAINT FK3c04262bcff61f87b5846b9800ab056e35970882 FOREIGN KEY (Чертежи) REFERENCES Чертежи; 
+CREATE INDEX Index3c04262bcff61f87b5846b9800ab056e35970882 on ТчЧертежи (Чертежи); 
+
+ ALTER TABLE ТехКарты ADD CONSTRAINT FKe2e6e2f6af1bd462a82c949ad88369a9f8bce8b9 FOREIGN KEY (Чертежи) REFERENCES Чертежи; 
+CREATE INDEX Indexe2e6e2f6af1bd462a82c949ad88369a9f8bce8b9 on ТехКарты (Чертежи); 
+
+ ALTER TABLE Материалы ADD CONSTRAINT FKcab395a3a7b0d55db96228a40d25d3cdaa7e09d6 FOREIGN KEY (Склады) REFERENCES Склады; 
+CREATE INDEX Indexcab395a3a7b0d55db96228a40d25d3cdaa7e09d6 on Материалы (Склады); 
+
+ ALTER TABLE Чертежи ADD CONSTRAINT FK0dce99adbc041b8e676121f05c769c7ca1678fd7 FOREIGN KEY (Заявки) REFERENCES Заявки; 
+CREATE INDEX Index0dce99adbc041b8e676121f05c769c7ca1678fd7 on Чертежи (Заявки); 
+
+ ALTER TABLE STORMWEBSEARCH ADD CONSTRAINT FKc4378e39870eb056aec84088683297a01d2a6200 FOREIGN KEY (FilterSetting_m0) REFERENCES STORMFILTERSETTING; 
+
+ ALTER TABLE STORMFILTERDETAIL ADD CONSTRAINT FK921d16269835017e2a0d0e29ad6fb175454a70d0 FOREIGN KEY (FilterSetting_m0) REFERENCES STORMFILTERSETTING; 
+
+ ALTER TABLE STORMFILTERLOOKUP ADD CONSTRAINT FKce38ef0db3f01a53acaa49fed8853fb941ad47ba FOREIGN KEY (FilterSetting_m0) REFERENCES STORMFILTERSETTING; 
+

@@ -1,0 +1,39 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Чертежи",
+      "projection": "ЧертежиL",
+      "detailModelName": null
+    },
+    {
+      "master": "материалы",
+      "displayAttributeName": "наименование",
+      "required": true,
+      "relationName": "ТЧТехКарты.Материалы",
+      "projection": "МатериалыL",
+      "detailModelName": "i-i-s-generaciya-novaya-т-ч-тех-карты"
+    },
+    {
+      "master": "оборудование",
+      "displayAttributeName": "наименование",
+      "required": true,
+      "relationName": "ТЧТехКарты.Оборудование",
+      "projection": "ОборудованиеL",
+      "detailModelName": "i-i-s-generaciya-novaya-т-ч-тех-карты"
+    }
+  ],
+  "external": false,
+  "caption": "Тех карты",
+  "name": "IISGeneraciya_novayaТехКартыE",
+  "className": "ТехКартыE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-тех-карты",
+      "modelProjection": "ТехКартыE"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Заявки",
+      "projection": "ЗаявкиL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Чертежи",
+  "name": "IISGeneraciya_novayaЧертежиE",
+  "className": "ЧертежиE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-чертежи",
+      "modelProjection": "ЧертежиE"
+    }
+  ]
+}

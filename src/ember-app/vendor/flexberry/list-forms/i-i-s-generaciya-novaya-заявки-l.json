@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-generaciya-novaya-заявки-e",
+  "editForm": "i-i-s-generaciya-novaya-заявки-e",
+  "external": false,
+  "caption": "Заявки",
+  "name": "IISGeneraciya_novayaЗаявкиL",
+  "className": "ЗаявкиL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-заявки",
+      "modelProjection": "ЗаявкиL"
+    }
+  ]
+}

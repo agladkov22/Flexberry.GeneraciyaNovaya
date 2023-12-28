@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-generaciya-novaya-материалы-e",
+  "editForm": "i-i-s-generaciya-novaya-материалы-e",
+  "external": false,
+  "caption": "Материалы",
+  "name": "IISGeneraciya_novayaМатериалыL",
+  "className": "МатериалыL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-generaciya-novaya-материалы",
+      "modelProjection": "МатериалыL"
+    }
+  ]
+}
